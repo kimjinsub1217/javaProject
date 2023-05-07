@@ -1,0 +1,135 @@
+package com.test.zoo;
+
+//동물원
+//모든 클래스는 com.test.zoo 라는 패키지에 만들어준다.
+//동물들의 특징은 다음과 같다.
+//코끼리
+//다리 : 4개, 코 : 길다, 몸 : 크다, 식사방법 : 코를 이용해 먹는다.
+//사막여우
+//다리 : 4개, 코 : 짧다, 몸 : 작다, 식사방법 : 손을 이용해 먹는다.
+//캥거루
+//다리 : 2개, 코 : 짧다, 몸 : 크다, 식사방법 : 나뭇잎을 뜯어 먹는다.
+//다리, 코, 몸, 식사방법은 변수로 정의한다.
+//각 동물은 자신의 정보를 출력하는 메서드를 가지고 있다.
+
+//예시
+//동물의 종류를 입력해주세요
+//1. 코끼리, 2. 사막여우, 3. 캥거루, 0. 입력끝 : 1
+//동물의 이름을 입력해주세요 : 맘모스
+//위의 입력을 0을 입력할 때 까지 반복한다....
+//0을 눌러 입력이 끝나면 모든 동물의 정보를 출력한다.
+//타입 : 코끼리
+//이름 : 맘모스
+//다리 : 4개
+//코 : 길다
+//몸 : 크다
+//식사방법 : 손을 이용해 먹는다.
+//.......
+import java.util.*;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+
+		Zoo zoo = new Zoo();
+
+		zoo.saveAnimalInfo();
+		zoo.inputAnimalNumber();
+
+	}
+
+}
+
+class Zoo {
+	Animal elephant = new Animal();
+	Animal fox = new Animal();
+	Animal kangaroo = new Animal();
+
+	Animal arr[] = new Animal[3];
+
+	Scanner sc = new Scanner(System.in);
+
+	public void saveAnimalInfo() {
+		arr[0] = elephant;
+		elephant.legCnt = 4;
+		elephant.type = "코끼리";
+		elephant.nose = "코가 길다.";
+		elephant.eat = "코를 사용하여 먹는다.";
+		elephant.size = "크다.";
+
+		arr[1] = fox;
+		fox.legCnt = 4;
+		fox.type = "여우";
+		fox.nose = "코가 짧다.";
+		fox.eat = "입으로 먹는다.";
+		fox.size = "작다.";
+
+		arr[2] = kangaroo;
+		kangaroo.legCnt = 2;
+		kangaroo.type = "캥거루";
+		kangaroo.nose = "코가 짧다.";
+		kangaroo.eat = "손을 사용하여 먹는다.";
+		kangaroo.size = "보통";
+	}
+
+	public void inputAnimalNumber() {
+
+		while (true) {
+			System.out.println("동물의 종류를 입력해주세요");
+			System.out.print("1. 코끼리 2. 사막여우 3. 캥거루 0. 입력끝");
+			int number = sc.nextInt();
+
+			if (number == 1) {
+				System.out.print("동물의 이름을 입력해주세요 : ");
+				String animalName = sc.next();
+				elephant.printAnimalInfo(animalName);
+			} else if (number == 2) {
+				System.out.print("동물의 이름을 입력해주세요 : ");
+				String animalName = sc.next();
+				fox.printAnimalInfo(animalName);
+			} else if (number == 3) {
+				System.out.print("동물의 이름을 입력해주세요 : ");
+				String animalName = sc.next();
+				kangaroo.printAnimalInfo(animalName);
+			} else if (number == 0) {
+				for (Animal s1 : arr) {
+					s1.printAnimalInfo();
+				}
+				break;
+			}
+		}
+	}
+
+}
+
+class Animal {
+
+	String type;
+	String name = "이름 없음";
+	int legCnt;
+	String nose;
+	String eat;
+	String size;
+
+	public void printAnimalInfo(String name) {
+		this.name = name;
+		System.out.printf("이름 : %s\n", name);
+		System.out.printf("타입 : %s\n", type);
+		System.out.printf("다리 개수 : %d개\n", legCnt);
+		System.out.printf("몸집 : %s\n", size);
+		System.out.printf("코 : %s\n", nose);
+		System.out.printf("식사방법 : %s\n", eat);
+		System.out.println();
+	}
+
+	public void printAnimalInfo() {
+		System.out.printf("이름 : %s\n", name);
+		System.out.printf("타입 : %s\n", type);
+		System.out.printf("다리 개수 : %d개\n", legCnt);
+		System.out.printf("몸집 : %s\n", size);
+		System.out.printf("코 : %s\n", nose);
+		System.out.printf("식사방법 : %s\n", eat);
+		System.out.println();
+	}
+}

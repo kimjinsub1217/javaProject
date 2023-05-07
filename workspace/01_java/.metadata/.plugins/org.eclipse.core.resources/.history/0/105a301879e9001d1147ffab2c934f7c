@@ -1,0 +1,58 @@
+package com.test.main;
+import java.util.*;
+
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		
+		// 동물원 객체를 생성한다.
+		ZooClass zooClass = new ZooClass(scanner);
+		
+		// 입력받은 동물의 타입 번호
+		int typeNumber = 0;
+		
+		// 입력 받는 동물 번호가 0이 아닌 동안 반복한다.
+		do {
+			// 동물 타입 번호를 입력받는다.
+			System.out.println("동물의 타입을 입력해주세요");
+			System.out.print("1.코끼리, 2.사막여우, 3.캥거루, 0.종료 : ");
+			typeNumber = scanner.nextInt();
+			
+			// 동물 타입 번호가 0이 아니라면...
+			if(typeNumber != 0) {
+			
+				// 동물의 이름을 입력받는다.
+				System.out.print("동물의 이름을 입력해주세요 : ");
+				String name = scanner.next();
+				// 동물 객체를 생성한다.
+				AnimalClass animal = null;
+				
+				switch(typeNumber) {
+				case 1 :
+					animal = new ElephantClass(name);
+					break;
+				case 2 :
+					animal = new DesertFoxClass(name);
+					break;
+				case 3 :
+					animal = new KangarooClass(name);
+					break;
+				}
+			
+				// 동물 객체를 담아준다.
+				zooClass.addAnimal(animal);
+			}
+		} while(typeNumber != 0);
+		
+		// 입력한 동물들의 정보를 출력한다.
+		zooClass.printAnimalInfo();
+		
+		
+		scanner.close();
+	}
+}
+
+
+

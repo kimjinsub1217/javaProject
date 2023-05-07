@@ -1,0 +1,91 @@
+package com.test.main;
+import java.util.*;
+import com.test.car.*;
+
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		
+		// 차 객체를 생성한다.
+		CarClass carClass = new CarClass(scanner);
+		
+		// 입력받은 차의 타입 번호
+		int typeNumber = 0;
+		
+		// 입력 받는 차 번호가 0이 아닌 동안 반복한다.
+		do {
+			// 차 타입 번호를 입력받는다.
+			System.out.println("어떤 자동차를 생상할까요?");
+			System.out.print("1. SUV, 2. 세단, 3. 슈퍼카, 0. 종료 : ");
+			typeNumber = scanner.nextInt();
+			
+			// 차 타입 번호가 0이 아니라면...
+			if(typeNumber != 0) {
+			
+				// 차의 이름을 입력받는다.
+				System.out.print("자동차의 이름은 무엇인가요?  ");
+				String name = scanner.next();
+				// 동물 객체를 생성한다.
+				CarClass car = null;
+				
+				switch(typeNumber) {
+				case 1 :
+					TestClass1 suv = new TestClass1() {
+
+						@Override
+						public void testMethod2() {
+							// TODO Auto-generated method stub
+							System.out.println("익명 중첩 클래스 사용");
+						}
+					};
+					break;
+				case 2 :
+					TestClass1 sedan  = new TestClass1() {
+
+						@Override
+						public void testMethod2() {
+							// TODO Auto-generated method stub
+							System.out.println("익명 중첩 클래스 사용");
+						}
+					};
+					break;
+				case 3 :
+					TestClass1 superCar = new TestClass1() {
+
+						@Override
+						public void testMethod2() {
+							// TODO Auto-generated method stub
+							System.out.println("익명 중첩 클래스 사용");
+						}
+					};
+					break;
+				}
+			
+
+			}
+		} while(typeNumber != 0);
+		
+		// 입력한 동물들의 정보를 출력한다.
+		carClass.printAnimalInfo();
+		
+		
+		scanner.close();
+	}
+}
+
+abstract class TestClass1 {
+
+	public void testMethod1() {
+		System.out.println("일반 메서드");
+	}
+
+	// 추상메서드
+	// 코드를 작성하는 몸체 부분이 없는 메서드
+	// 메서드 앞에 abstract 키워드를 붙혀준다.
+	public abstract void testMethod2();
+}
+
+
+

@@ -1,0 +1,60 @@
+package com.test.main;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		//동물원
+		//모든 클래스는 com.test.zoo라는 패키지에 만든다.
+		
+		/*특징
+		//코끼리 elephant
+		//다리 leg
+		//코 길다
+		//몸 크다
+		// 식사방법 코를 이용해 먹는다
+		 * 
+		 * 사막여우
+		 * 다리 4
+		 * 코 짧다
+		 * 몸 작다
+		 * 식사방법 손을 이용해
+		 * 
+		 * 캥거루
+		 * 다리 2
+		 * 코 짧
+		 * 몸 크다
+		 * 식사방법 나뭇잎
+		 * 
+		 * 동물의 종류를 입력해주세요
+		 * 1. 코끼리 2. 사막여우 3. 캥거루 0. 입력끝
+		*/
+		
+		
+		//class zoo + animal
+		//animal -> elephant ,fox, kangaroo
+		//-> 다리, 코, 몸, 식사방법
+		
+		
+//		동물의 종류를 입력해주세요  animal selection 클래스 
+//		while(true) {
+//			
+//			
+//		}
+		
+// 		
+		
+		
+		
+
+	}
+	
+class zoo{
+	
+}
+
+class animal{
+	
+}
+	
+
+}

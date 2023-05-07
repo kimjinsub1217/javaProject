@@ -1,0 +1,42 @@
+package com.test.main;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+
+		SubClass sub1 = new SubClass();
+		System.out.printf("sub1.memberA : %d\n", sub1.memberA);
+		System.out.printf("sub1.memberA : %d\n", sub1.memberB);
+		sub1.superMethod1();
+
+		SuperClass super1 = sub1;
+		System.out.printf("super1.memberA : %d\n", super1.memberA);
+		System.out.printf("Super1.memberB : %d\n", super1.memberB);
+		super1.superMethod1();
+		
+		sub1.printSubClass();
+	}
+
+}
+
+// 부모클래스
+class SuperClass {
+	int memberA = 100;
+	int memberB = 200;
+
+	public void superMethod1() {
+		System.out.println("SuperClass의 superMethod1 입니다.");
+	}
+}
+
+//자식클래스
+class SubClass extends SuperClass {
+	// 부모가 가지고 있는 변수와 동일한 이름의 변수를 선언한다.
+//	int memberA = 300;
+//	int memberB = 400;
+	
+	 public void printSubClass() {
+	        System.out.printf("memberA : %d\n", memberA);
+	        System.out.printf("memberB : %d\n", memberB);
+	    }
+}

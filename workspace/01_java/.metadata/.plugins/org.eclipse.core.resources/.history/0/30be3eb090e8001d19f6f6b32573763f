@@ -1,0 +1,72 @@
+package com.test.zoo;
+
+import java.util.*;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+
+		Zoo zoo = new Zoo();
+		Animal animal = new Animal();
+		zoo.inputAnimalNumber();
+	}
+
+}
+
+// 동물의 종류를 입력해주세요
+// 1. 코끼리 2. 사막여우 3. 캥거루 0. 입력끝
+// 1  
+
+// 1. 코끼리 2. 사막여우 3. 캥거루 0. 입력끝
+// 0
+//다리 2
+//코 짧
+//몸 크다
+//식사방법 나뭇잎
+
+class Zoo {
+	Animal animal = new Animal();
+	Animal arr[] = new Animal[3];
+
+	Scanner sc = new Scanner(System.in);
+
+	public void saveAnimalInfo() {
+
+	}
+
+	public void inputAnimalNumber() {
+
+		while (true) {
+			System.out.println("동물의 종류를 입력해주세요");
+
+			System.out.println("1. 코끼리 2. 사막여우 3. 캥거루 0. 입력끝");
+			int number = sc.nextInt();
+
+			if (number == 1) {
+				animal.elephant();
+			} else if (number == 2) {
+				animal.fox();
+			} else if (number == 3) {
+				animal.kangaroo();
+			} else if (number == 0) {
+				break;
+			}
+		}
+	}
+
+}
+
+class Animal extends Zoo {
+	public void elephant() {
+		System.out.println("코끼리");
+	}
+
+	public void fox() {
+		System.out.println("여우");
+	}
+
+	public void kangaroo() {
+		System.out.println("캥거루");
+	}
+
+}

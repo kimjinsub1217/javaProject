@@ -1,0 +1,28 @@
+package com.test.main;
+
+import java.util.ArrayList;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		// Collection
+		// 객체들을 모아 관리요소들
+		// List : 순서를 통해 관리한다.
+		// Map : 이름을 통해 관리한다.
+		// Set 집합(중복된 객체를 담을 수 없고, 순서와 이름에 대한 개념이 없다)
+
+		// List
+		ArrayList list1 = new ArrayList();
+		list1.add("문자열1");
+		list1.add("문자열2");
+		list1.add("문자열3");
+		list1.add(100);
+		list1.add(11.11);
+		
+		for(Object obj : list1) {
+            System.out.println(obj);
+        }
+
+	}
+
+}

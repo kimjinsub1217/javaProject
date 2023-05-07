@@ -1,0 +1,16 @@
+package com.test.main;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+//		Warpper 클래스 : 기본 자료형 값을 관리하기 위한 목적으로 만든 클래스
+
+//		자료형에 대한 정보를 파악한다.
+		System.out.printf("바이트수 : %d\n", Integer.BYTES);
+		System.out.printf("비트수 : %d\n", Integer.SIZE);
+		System.out.printf("최대값 : %d\n", Integer.MAX_VALUE);
+		System.out.printf("최소값 : %d\n", Integer.MIN_VALUE);
+
+	}
+
+}

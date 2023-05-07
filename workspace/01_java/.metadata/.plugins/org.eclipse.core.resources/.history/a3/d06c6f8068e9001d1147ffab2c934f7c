@@ -1,0 +1,33 @@
+package com.test.main;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+
+		// 코끼리 객체를 생성한다.
+		AnimalClass a1 = new AnimalClass() {
+			public void howEat() {
+				System.out.println("코를 이용해 먹습니다.");
+			};
+		};
+		a1.type = "코끼리";
+		a1.name = "토토";
+		a1.numberLeg = 4;
+		
+		//강아지 객체를 생성한다.
+		
+	
+	}
+
+}
+
+class AnimalClass {
+	String type;
+	String name;
+	int numberLeg;
+
+	public void howEat() {
+
+	}
+
+}

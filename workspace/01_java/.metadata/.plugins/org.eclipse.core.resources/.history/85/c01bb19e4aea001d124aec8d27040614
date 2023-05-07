@@ -1,0 +1,20 @@
+package com.test.main;
+
+import java.util.*;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+//		 Date : 컴퓨터 입장에서의 시간 관리
+//       Calendar : 사람 입장에서의 시간 관리
+		
+//		현재 시간을 관리하는 Date 객체를 생성한다.
+		 Date date1 = new Date();
+		 System.out.println(date1);
+		 
+//		 date 객체가 관리하는 시간값을 유닉스 타임으로 가져온다.
+		 long time1 =date1.getTime();
+		 System.out.println(time1);
+	}
+
+}

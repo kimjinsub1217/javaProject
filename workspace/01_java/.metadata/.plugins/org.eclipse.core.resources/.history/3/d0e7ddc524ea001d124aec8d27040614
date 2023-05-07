@@ -1,0 +1,56 @@
+package com.test.main;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+//		 예외처리
+//		 프로그램 수행중에 오류가 발생하거나 발생 가능성이 있다면 JVM은
+//		 오류가 JVM이나 OS에 전파되는 것을 막기위해 프로그램을 강제 종료 킨다.
+//		 이때, 강제 종류가 되지 ㅇ낳게 하고 개발자가 준비한 오류 발생시 수행되어야
+//		 하는 코드가 수행될 수 있도록 하여 오류를 대비하게 해주는 것이
+//		 예외처리
+//		 try: 원하는 처리의 코드
+//		 catch:오류가 발생했거나 발생할 가능성이 있을때 동작하는 코드
+
+//		0으로 나눈다.
+//		int a1 = 10 / 0;
+//		객체의 아이디를 가지고 있지 않은 변수를 통해 객체 접근을 시도한다.
+//		TestClass1 t1 =null;
+//		t1.testMethod1();
+
+//		원하는 처리를 수행할 수 있는 코드 중에
+//		예외가 발생할 가능성이 있는 부분을 try로 묶어준다.
+		try {
+//			0으로 나눈다.
+//			int a1 = 10 / 0;
+
+//			객체의 아이디를 가지고 있지 않은 변수를 통해 객체 접근을 시도한다.
+//			TestClass1 t1 =null;
+//			t1.testMethod1();
+			
+			int [] array1 = new int[10];
+			array1[20] =200;
+			
+			System.out.println("오류 발생 시점 이후의 try 코드");
+		} catch (ArithmeticException e) {
+			System.out.println("수학연산 오류가 발생했습니다");
+		} catch (NullPointerException e) {
+			System.out.println("객체 참조 오류가 발생했습니다");
+		} catch (Exception e) {
+//			오류가 발생했을 때 처리될 코드는 catch부분에 만든다.
+			System.out.println("오류가 발생했습니다.");
+			System.out.println(e);
+			e.printStackTrace();
+		}
+
+		System.out.println("이 부분이 실행할까요??");
+
+	}
+
+}
+
+class TestClass1 {
+	public void testMethod1() {
+		System.out.println("TestClass1의 testMethod1");
+	}
+}

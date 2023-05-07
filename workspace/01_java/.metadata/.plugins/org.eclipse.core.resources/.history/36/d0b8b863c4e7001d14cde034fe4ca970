@@ -1,0 +1,62 @@
+package java21_problem;
+
+import java.util.Scanner;
+
+
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		
+		Student sdt = new Student();
+		int sumk =0;
+		int sumE =0;
+		int sumM =0;
+		
+		double avgK =0;
+		double avgE =0;
+		double avgM =0;
+		
+		for(int i=0;i<3;i++) {
+			System.out.print("이름 :");
+			sdt.name = scan.next();
+			
+			System.out.print("학년 :");
+			sdt.grade = scan.nextInt();
+			
+			System.out.print("국어 :");
+			sdt.name = scan.next();
+			
+			System.out.print("영어 :");
+			sdt.name = scan.next();
+			
+			System.out.print("수학 :");
+			sdt.name = scan.next();
+			
+			System.out.println();
+			sumk = sumk+sdt.kor;
+			sumE = sumk+sdt.eng;
+			sumM = sumk+sdt.math;
+		}
+		
+		avgK = sumk/3;
+		avgE = sumE/3;
+		avgM = sumM/3;
+		
+        System.out.println("과목별 총점");
+        System.out.printf("국어 : %d\n", sumk);
+        System.out.printf("영어 : %d\n", sumE);
+        System.out.printf("수학 : %d\n", sumM);
+
+        System.out.println();
+
+        System.out.println("과목별 평균");
+        System.out.printf("국어 : %.2f\n", avgK);
+        System.out.printf("영어 : %.2f\n", avgE);
+        System.out.printf("수학 : %.2f\n", avgM);
+		
+
+	}
+
+}

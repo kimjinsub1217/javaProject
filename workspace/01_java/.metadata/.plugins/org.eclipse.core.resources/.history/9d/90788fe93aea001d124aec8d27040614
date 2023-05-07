@@ -1,0 +1,26 @@
+package com.test.main;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		/*
+		 * String : 자바에서 문자열을 관리하기 위해 제공되는 클래스 " "로 묶어준 문자열도 String 객체이다.
+		 */
+
+		String str1 = new String("안녕하세요");
+		String str2 = "안녕하세요";
+
+		System.out.printf("str1 : %s\n", str1);
+		System.out.printf("str2 : %s\n", str2);
+		
+		/*
+		 * 객체 == 객체의 연산은 두 객체가 같은 객체인지를 확인하는 작업이다.
+		 */
+		
+		if("안녕"=="안녕") {
+			System.out.println("나도, 안녕");
+		}
+
+	}
+
+}

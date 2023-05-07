@@ -1,0 +1,115 @@
+package com.test.main;
+
+import java.util.Scanner;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner scan = new Scanner(System.in);
+
+		// Avg객체 생성
+		Avg avg = new Avg();
+		
+		
+		
+		// 학생 수만큼 객체 생성
+//		Student s1 = new Student();
+//		Student s2 = new Student();
+//		Student s3 = new Student();
+		Student[] array3 = new Student[3];
+		
+		
+		array3[0] = new Student();
+		array3[1] = new Student();
+		array3[2] = new Student();
+		
+		// 입력 받는다
+		array3[0].inputStudentInfo(scan);
+		array3[1].inputStudentInfo(scan);
+		array3[2].inputStudentInfo(scan);
+
+		// 학생 정보를 출력
+		array3[0].printStudentInfo();
+		array3[1].printStudentInfo();
+		array3[2].printStudentInfo();
+
+		// 과목별 총점, 평균을 구한다
+		avg.printPointTotal(array3[0], array3[1], array3[2]);
+		avg.printPointAvg();
+
+	}
+
+}
+
+class Avg {
+	// 학생수
+	int studentCount = 3;
+
+	int koreanTotal = 0;
+	int englishTotal = 0;
+	int mathTotal = 0;
+
+	// 과목별 총점을 구하는 메서드
+	public void printPointTotal(Student s1, Student s2, Student s3) {
+		koreanTotal = s1.k + s2.k + s3.k;
+		englishTotal = s1.e + s2.e + s3.e;
+		mathTotal = s1.m + s2.m + s3.m;
+
+		System.out.printf("국어 총점 : %d\n", koreanTotal);
+		System.out.printf("영어 총점 : %d\n", englishTotal);
+		System.out.printf("수학 총점 : %d\n", mathTotal);
+	}
+
+	// 과목별 평균을 구하고 출력하는 메서드
+	public void printPointAvg() {
+
+		double koreanAvg = koreanTotal / studentCount;
+		double englishAvg = englishTotal / studentCount;
+		double mathAvg = mathTotal / studentCount;
+
+		System.out.printf("국어 평균 : %.2f\n", koreanAvg);
+		System.out.printf("영어 평균 : %.2f\n", englishAvg);
+		System.out.printf("수학 평균 : %.2f\n", mathAvg);
+	}
+
+}
+
+class Student {
+
+	String name;
+	
+	
+	int grade;
+	int k;
+	int e;
+	int m;
+
+	// 학생의 정보를 출력하는 메서드
+	public void printStudentInfo() {
+		System.out.printf("이름 : %s\n", name);
+		System.out.printf("학년 : %d\n", grade);
+		System.out.printf("국어 : %d\n", k);
+		System.out.printf("영어 : %d\n", e);
+		System.out.printf("수학 : %d\n", m);
+	}
+
+	public void inputStudentInfo(Scanner scan) {
+		System.out.print("이름 : ");
+		name = scan.next();
+
+		System.out.print("학년 : ");
+		grade = scan.nextInt();
+
+		System.out.print("국어 : ");
+		k = scan.nextInt();
+
+		System.out.print("영어 : ");
+		e = scan.nextInt();
+
+		System.out.print("수학 : ");
+		m = scan.nextInt();
+	}
+	
+
+}

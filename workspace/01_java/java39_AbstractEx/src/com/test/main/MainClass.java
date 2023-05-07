@@ -1,0 +1,120 @@
+package com.test.main;
+import java.util.*;
+import com.test.car.*;
+
+import zoo.AnimalClass;
+
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		
+		// 차 객체를 생성한다.
+		CarClass carClass = new CarClass(scanner);
+		
+		// 입력받은 차의 타입 번호
+		int typeNumber = 0;
+		
+		// 입력 받는 차 번호가 0이 아닌 동안 반복한다.
+		do {
+			// 차 타입 번호를 입력받는다.
+			System.out.println("어떤 자동차를 생상할까요?");
+			System.out.print("1. SUV, 2. 세단, 3. 슈퍼카, 0. 종료 : ");
+			typeNumber = scanner.nextInt();
+			
+			// 차 타입 번호가 0이 아니라면...
+			if(typeNumber != 0) {
+			
+				// 차의 이름을 입력받는다.
+				System.out.print("자동차의 이름은 무엇인가요?  ");
+				String name = scanner.next();
+				// 차 객체를 생성한다.
+				// 동물 객체를 생성한다.
+				CarClass animal = null;
+
+				switch(typeNumber) {
+				case 1 :
+					CarList suv = new CarList() {
+
+						@Override
+						public void Sub() {
+						
+							
+						}
+
+						@Override
+						public void howStartCar() {
+							// TODO Auto-generated method stub
+							
+						}
+
+						
+					
+					};
+					break;
+				case 2 :
+					CarList sedan = new CarList() {
+
+						@Override
+						public void Sub() {
+							
+						
+							this.setVehicleType("sub");
+							this.setName(name);
+							this.setPrice("싸다");
+							this.setAutoColor("빨간색");
+							
+						}
+
+						@Override
+						public void howStartCar() {
+							System.out.println("카드를 올려둡니다.");
+							
+						}
+
+					
+					};
+					
+					
+					break;
+				case 3 :
+					CarList superCar = new CarList() {
+
+						@Override
+						public void Sub() {
+							// TODO Auto-generated method stub
+							
+						}
+
+						@Override
+						public void howStartCar() {
+							System.out.println("카드를 올려둡니다.");
+							
+						}
+
+					
+					};
+					break;
+				}
+			
+
+			}
+		} while(typeNumber != 0);
+		
+		// 입력한 동물들의 정보를 출력한다.
+		carClass.printAnimalInfo();
+		
+		
+		scanner.close();
+	}
+}
+
+abstract class CarList extends CarsClass {
+
+	public abstract void Sub();
+
+}
+
+
+

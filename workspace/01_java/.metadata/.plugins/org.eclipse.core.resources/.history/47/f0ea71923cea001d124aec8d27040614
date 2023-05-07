@@ -1,0 +1,48 @@
+package com.test.main;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+		/*
+		 * String : 자바에서 문자열을 관리하기 위해 제공되는 클래스 " "로 묶어준 문자열도 String 객체이다.
+		 */
+
+		String str1 = new String("안녕하세요");
+		String str2 = "안녕하세요";
+
+		System.out.printf("str1 : %s\n", str1);
+		System.out.printf("str2 : %s\n", str2);
+		
+		/*
+		 * 객체 == 객체의 연산은 두 객체가 같은 객체인지를 확인하는 작업이다.
+		 */
+		
+		if("안녕"=="안녕") {
+			System.out.println("나도, 안녕");
+		}
+		
+		String str3 = new String("안녕하세요");
+		String str4 = new String("안녕하세요");
+		
+		if(str3 == str4) {
+            System.out.println("str3과 str4는 같은 객체이다.");
+        } else {
+            System.out.println("str3과 str4는 같은 객체가 아니다.");
+        }
+		
+		/*
+		 * ==는 두 객체가 같은 객체인지를 비교하는 것이고 
+		 * equals 두 객체가 관리하는 값이 같은지를 비교하는 것이다.
+		 */
+		
+		  if("안녕하세요".equals("안녕하세요")) {
+	            System.out.println("두 문자열 객체가 관리하는 문자열이 같다");
+	        }
+	        if(str3.equals(str4)) {
+	            System.out.println("str3과 str4가 관리하는 문자열이 같다");
+	        }
+		
+
+	}
+
+}
