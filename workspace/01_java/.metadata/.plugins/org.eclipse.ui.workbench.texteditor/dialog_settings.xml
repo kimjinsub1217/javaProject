@@ -5,13 +5,14 @@
 		<item key="DIALOG_Y_ORIGIN" value="396"/>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="printData"/>
+		<item key="selection" value="환영"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="환영"/>
 			<item value="printData"/>
 			<item value="ArrayList"/>
 			<item value="carList"/>

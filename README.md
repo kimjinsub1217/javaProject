@@ -1,2 +1,2 @@
-# javaProject
-멋쟁이사자처럼에서 공부한 예제
+# Java Project
+`앱 SCHOOL 2기 : Android`에서 공부한 `JAVA` 예제

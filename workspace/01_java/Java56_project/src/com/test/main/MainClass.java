@@ -7,7 +7,9 @@ import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
-
+/*
+ * 조원 : 김진섭 , 장용진 ,천성민,신승헌
+ */
 public class MainClass {
 	static ArrayList<StudentClass> list = new ArrayList<StudentClass>();
 	static int totalKor = 0;// 국어 총점
